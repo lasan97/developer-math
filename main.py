@@ -21,5 +21,9 @@ def _대수_표현식():
     expr = x**2 / x**5
     print(expr)
 
+def _로그함수():
+    x = log(8, 2)
+    print(x)
+
 if __name__ == '__main__':
-    _대수_표현식()
+    _로그함수()
