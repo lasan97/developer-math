@@ -1,5 +1,6 @@
 from sympy import *
 from sympy.plotting import plot3d
+from math import log
 
 def _선형함수():
     x = symbols('x')
@@ -44,5 +45,9 @@ def _연속_복리이자_계산():
 
     print(a)
 
+def _자연로그():
+    l = log(10)
+    print(l)
+
 if __name__ == '__main__':
-    _연속_복리이자_계산()
+    _자연로그()
