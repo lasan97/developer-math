@@ -16,5 +16,10 @@ def _3차원그래프():
     f = 2*x + 3*y
     plot3d(f)
 
+def _대수_표현식():
+    x = symbols('x')
+    expr = x**2 / x**5
+    print(expr)
+
 if __name__ == '__main__':
-    _3차원그래프()
+    _대수_표현식()
