@@ -49,5 +49,13 @@ def _자연로그():
     l = log(10)
     print(l)
 
+def _극한():
+    n = symbols('n')
+    f =  (1 + (1/n))**n
+    result = limit(f, n, oo)
+
+    print(result)
+    print(result.evalf())
+
 if __name__ == '__main__':
-    _자연로그()
+    _극한()
