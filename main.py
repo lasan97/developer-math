@@ -88,5 +88,20 @@ def _미분_계산기():
 
     print(slope_at_2)
 
+def _편도함수():
+    x,y = symbols('x y')
+
+    f = 2*x**3 + 3*y**3
+
+    # x와 y에 대한 편도함수 계산
+    dx_f = diff(f, x)
+    dy_f = diff(f, y)
+
+    print(dx_f)
+    print(dy_f)
+
+    plot3d(f)
+
+
 if __name__ == '__main__':
-    _미분_계산기()
+    _편도함수()
