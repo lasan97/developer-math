@@ -69,5 +69,14 @@ def _미분():
 
     print(slope_at_2)
 
+def _도함수():
+    x = symbols('x')
+
+    f = x**2
+
+    # 이 함수의 도함수를 계산합니다.
+    dx_f = diff(f)
+    print(dx_f)
+
 if __name__ == '__main__':
-    _미분()
+    _도함수()
