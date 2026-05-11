@@ -126,5 +126,34 @@ def _극한_도함수():
 
     print(result)
 
+def _x에대한_z도함수():
+    # ㅇ
+    x = symbols('x')
+    z = (x**2 + 1)**3 -2
+    dz_dx = diff(z, x)
+    print(dz_dx)
+
+def _연쇄법칙_유무와_상관없이_dz_dx_계산결과는_같음():
+    x, y = symbols('x y')
+
+    # 첫 번째 함수의 도함수
+    # 충돌을 피하기 위해 _y
+    _y = x**2 + 1
+    dy_dx = diff(_y)
+
+    # 두 번째 도함수
+    z = y**3 - 2
+    dz_dy = diff(z)
+
+    # 연쇄 벅칙을 사용한 경우와
+    # 대체 방식을 사용한 경우
+    dz_dx_chain = (dy_dx * dz_dy).subs(y, _y)
+    dz_dx_no_chain = diff(z.subs(y, _y))
+
+    # 두 값이 같다는 것을 보임으로써 연쇄 법칙 증명
+    print(dz_dx_chain)
+    print(dz_dx_no_chain)
+
 if __name__ == '__main__':
-    _극한_도함수()
+    # _x에대한_z도함수()
+    _연쇄법칙_유무와_상관없이_dz_dx_계산결과는_같음()
