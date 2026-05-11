@@ -77,6 +77,16 @@ def _도함수():
     # 이 함수의 도함수를 계산합니다.
     dx_f = diff(f)
     print(dx_f)
+    print(dx_f.subs(x, 2))
+
+def _미분_계산기():
+    def f(x):
+        return x ** 2
+    def d_f(x):
+        return x * 2
+    slope_at_2 = d_f(2.0)
+
+    print(slope_at_2)
 
 if __name__ == '__main__':
-    _도함수()
+    _미분_계산기()
