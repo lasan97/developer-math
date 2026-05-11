@@ -114,5 +114,17 @@ def _극한_기울기():
 
     print(result)
 
+def _극한_도함수():
+    x,s = symbols('x s')
+
+    f = x**2
+
+    slope_f = (f.subs(x, x + s) - f) / ((x+s) - x)
+
+    # s 가 0에 무한히 가까워질 때 도함수를 계산
+    result = limit(slope_f, s, 0)
+
+    print(result)
+
 if __name__ == '__main__':
-    _극한_기울기()
+    _극한_도함수()
