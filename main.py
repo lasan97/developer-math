@@ -191,5 +191,23 @@ def _적분():
 
     print(area) # 유리수 4/3
 
+def _극한사용_적분():
+    x, i, n = symbols('x i n')
+
+    f = x**2 + 1
+    lower, upper = 0,1
+
+    delta_x = ((upper - lower) / n)
+    x_i = (lower + delta_x * i)
+    fx_i = f.subs(x, x_i)
+
+    # n개의 직사각형을 순환하며 면적을 합산
+    n_rectangles = Sum(delta_x * fx_i, (i,1,n)).doit()
+
+    # 직사각형의 개수 n을 무한대로 늘려 면적을 계산
+    area = limit(n_rectangles, n, oo)
+
+    print(area)
+
 if __name__ == '__main__':
-    _적분()
+    _극한사용_적분()
