@@ -181,5 +181,15 @@ def _적분_근사():
     area = approximate_integral(a=0, b=1, n=1000000, f=my_function)
     print(area)
 
+def _적분():
+    x = symbols('x')
+
+    f = x**2 + 1
+
+    # 적분 계산
+    area = integrate(f, (x, 0, 1))
+
+    print(area) # 유리수 4/3
+
 if __name__ == '__main__':
-    _적분_근사()
+    _적분()
