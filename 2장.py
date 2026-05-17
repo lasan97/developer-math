@@ -1,4 +1,5 @@
 from scipy.stats import binom
+from scipy.stats import beta
 
 def _베이즈_정리():
     p_coffee_drinker = 0.65
@@ -30,5 +31,21 @@ def _이항분포_with_사이파이():
         probability = binom.pmf(k, n, p)
         print("{0} - {1}".format(k, probability))
 
+def _베타분포_with_사이파이():
+
+    a = 8
+    b = 2
+
+    # 최대 90%, 0.0 에서 0.9까지의 면적
+    p = beta.cdf(0.90, a,b)
+
+    # 그래프 왼쪽 면적
+    print(p)
+
+    # 그래프 오른쪽 면적
+    # 0.9 에서 1까지의 면적
+    print(1 - p)
+
+
 if __name__ == '__main__':
-    _이항분포()
+    _베타분포_with_사이파이()
