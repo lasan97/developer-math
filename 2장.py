@@ -10,6 +10,17 @@ def _베이즈_정리():
 
     print(p_cancer_given_coffee_drinker)
 
+def _이항분포():
+
+    n =  10 # 전체 시도 횟수
+    k = 8 # 성공 횟수
+    p = 0.9 # 한 번 성공할 확률
+
+    # P(X) = C(n,k) * p**k * (1-p)**(n-k)
+    probability = binom.pmf(k, n, p)
+    print(probability)
+
+
 def _이항분포_with_사이파이():
 
     n = 20
@@ -20,4 +31,4 @@ def _이항분포_with_사이파이():
         print("{0} - {1}".format(k, probability))
 
 if __name__ == '__main__':
-    _이항분포_with_사이파이()
+    _이항분포()
