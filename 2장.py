@@ -1,6 +1,4 @@
-from sympy import *
-from sympy.plotting import plot3d
-from math import log
+from scipy.stats import binom
 
 def _베이즈_정리():
     p_coffee_drinker = 0.65
@@ -12,5 +10,14 @@ def _베이즈_정리():
 
     print(p_cancer_given_coffee_drinker)
 
+def _이항분포_with_사이파이():
+
+    n = 20
+    p = 0.9
+
+    for k in range(n + 1):
+        probability = binom.pmf(k, n, p)
+        print("{0} - {1}".format(k, probability))
+
 if __name__ == '__main__':
-    _베이즈_정리()
+    _이항분포_with_사이파이()
